@@ -1,9 +1,11 @@
 const pizzaPlace = "Pizzeria Tuzzo";
 let numberOfToppings = 16;
 console.log(pizzaPlace);
+console.log(typeof pizzaPlace);
 console.log(numberOfToppings);
+console.log (typeof numberOfToppings);
 console.log(
-  pizzaPlace + " has " + numberOfToppings + " different toppings on offer"
+  `${pizzaPlace} has ${numberOfToppings} different toppings on offer`
 );
 
 if (numberOfToppings >= 10) {

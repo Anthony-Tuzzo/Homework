@@ -1,5 +1,5 @@
 const pizzaPlace = "Pizzeria Tuzzo";
-let numberOfToppings = 16;
+let numberOfToppings = 35;
 console.log(pizzaPlace);
 console.log(typeof pizzaPlace);
 console.log(numberOfToppings);
@@ -14,7 +14,7 @@ if (numberOfToppings >= 10) {
   console.log("Quality, not quantity");
 }
 
-for (let i = 1; i < numberOfToppings; i++) {
+for (let i = 1; i <= numberOfToppings; i++) {
   if (i % 2 === 0) {
     console.log(i);
   }

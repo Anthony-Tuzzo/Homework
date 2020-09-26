@@ -2178,5 +2178,5 @@ const user5Post = thirdData.filter(title => title.userId === 5);
 console.log(user5Post);
 
 // then, create a list of title and body pairs
-const titleAndBody = thirdData.filter(user => [user.title, user.body]);
+const titleAndBody = thirdData.map(user => [user.title, user.body]);
 console.log(titleAndBody);

@@ -3411,7 +3411,6 @@ const tasksSummary = tasks.reduce((acc, curr) => {
   } else {
     acc[curr.threeTaskSum] = {
       totalTasks: 1,
-      complete: 0,
       incomplete: 0
     };
     if (curr.completed === true) {

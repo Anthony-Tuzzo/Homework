@@ -3394,24 +3394,28 @@ const tasks = [
 ];
 
 //create an object that summarizes the incomplete tasks of users 3,7 & 8
+const threeTasks = tasks.filter(
+  todo => todo.userId === 3 || todo.userId === 7 || todo.userId === 8
+);
+console.log(threeTasks);
 
-const userThree = tasks.filter(todo => todo.userId === 3);
-const userSeven = tasks.filter(todo => todo.userId === 7);
-const userEight = tasks.filter(todo => todo.userId === 8);
+const threeTaskSummary = threeTasks.filter(user => [user.userId === 3 || user.userId === 7 || user.userId === 8]);
+console.log(threeTaskSummary);
 
 const tasksSummary = tasks.reduce((acc, curr) => {
-  if (acc[curr.userId]) {
-    acc[curr.userId].totalTasks += 1;
+  if (acc[curr.threeTaskSum]) {
+    acc[curr.threeTaskSum].totalTasks += 1;
     if (curr.completed === true) {
-      acc[curr.userId].totalIncomplete += 1;
+      acc[curr.threeTaskSum].incomplete += 1;
     }
   } else {
-    acc[user => [userID ===3, userId === 7]] = {
+    acc[curr.threeTaskSum] = {
       totalTasks: 1,
-      totalIncomplete: 0,
+      complete: 0,
+      incomplete: 0
     };
     if (curr.completed === true) {
-      acc[curr.userId].totalIncomplete += 1;
+      acc[curr.threeTaskSum].incomplete += 1;
     }
   }
   return acc;

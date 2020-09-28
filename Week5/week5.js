@@ -1462,6 +1462,7 @@ console.log(user9Todo);
 const incompleteTasks = user9Todo.filter(task => task.completed === false);
 console.log(incompleteTasks);
 
+//using the placeholder data here
 const thirdData = [
   {
     userId: 1,
@@ -3394,27 +3395,22 @@ const tasks = [
 ];
 
 //create an object that summarizes the incomplete tasks of users 3,7 & 8
-const threeTasks = tasks.filter(
-  todo => todo.userId === 3 || todo.userId === 7 || todo.userId === 8
-);
+const threeTasks = tasks.filter(todo => (todo.userId === 3 || todo.userId === 7 || todo.userId === 8));
 console.log(threeTasks);
 
-const threeTaskSummary = threeTasks.filter(user => [user.userId === 3 || user.userId === 7 || user.userId === 8]);
-console.log(threeTaskSummary);
-
 const tasksSummary = tasks.reduce((acc, curr) => {
-  if (acc[curr.threeTaskSum]) {
-    acc[curr.threeTaskSum].totalTasks += 1;
+  if (acc[curr.threeTasks]) {
+    acc[curr.threeTasks].totalTasks += 1;
     if (curr.completed === true) {
-      acc[curr.threeTaskSum].incomplete += 1;
+      acc[curr.threeTasks].incomplete += 1;
     }
   } else {
-    acc[curr.threeTaskSum] = {
+    acc[curr.threeTasks] = {
       totalTasks: 1,
       incomplete: 0
     };
     if (curr.completed === true) {
-      acc[curr.threeTaskSum].incomplete += 1;
+      acc[curr.threeTasks].incomplete += 1;
     }
   }
   return acc;
